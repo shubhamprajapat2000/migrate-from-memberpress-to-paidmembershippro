@@ -59,6 +59,26 @@ class Migrate_From_Memberpress_To_Paidmembershippro_Admin {
 	 *
 	 * @since    1.0.0
 	 */
+
+	public function ets_migrate_add_admin_menu() {
+		add_management_page(
+			//'tools.php',
+			_( 'Migrate Menu' ),
+			_( 'Migrate Menu' ),
+			'manage_options',
+			'migrate-from-memberpress-to-paidmembershippro',
+			array( $this, 'ets_pmpro_view' ),
+		);
+	}
+
+	public function ets_pmpro_view() {
+		if ( ! current_user_can( 'administrator' ) ) {
+			return;
+		}
+		require_once MIGRATE_FROM_MEMBERPRESS_PLUGIN_DIR_PATH . 'admin/partials/migrate-from-memberpress-to-paidmembershippro-admin-display.php';
+	}
+
+
 	public function enqueue_styles() {
 
 		/**
@@ -99,5 +119,34 @@ class Migrate_From_Memberpress_To_Paidmembershippro_Admin {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/migrate-from-memberpress-to-paidmembershippro-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
+
+	// global $wpdb;
+// $posts = $wpdb->get_results("SELECT ID, post_title FROM wp_posts WHERE post_status = 'publish'
+// AND post_type='memberpressproduct'");
+
+// echo "<pre>";
+// print_r($posts);
+// echo "<pre>";
+
+
+// if(!empty($posts))                       
+// {    
+//     echo "<table width='100%' border='0'>"; // Adding <table> and <tbody> tag outside foreach loop so that it wont create again and again
+//     echo "<tbody>";      
+//     foreach($posts as $row){   
+//         echo "<tr>";
+//         echo "<th>ID</th>" . "<td colspan='2'>" . $row->ID . "</td>";
+//         echo "<th>Post title</th>" . "<td>" . $row->post_title . "</td>";
+//         echo "</tr>";
+//     echo "</tbody>";
+//     echo "</table>"; 
+
+// }
+// }
+
+
+	
+		
+			
 
 }
