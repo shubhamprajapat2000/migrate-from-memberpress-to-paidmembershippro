@@ -119,6 +119,7 @@ class Migrate_From_Memberpress_To_Paidmembershippro_Admin {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/migrate-from-memberpress-to-paidmembershippro-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
+    
 
 	// global $wpdb;
 // $posts = $wpdb->get_results("SELECT ID, post_title FROM wp_posts WHERE post_status = 'publish'
@@ -143,6 +144,57 @@ class Migrate_From_Memberpress_To_Paidmembershippro_Admin {
 
 // }
 // }
+/* INSERT DATA INTO DATABASE */
+
+
+                            //$meta = get_post_meta( $id , '_mepr_product_price' );
+                            // echo "<pre>";
+                            // print_r($meta);
+                            // echo "</pre>";
+                           // $meta = 50;
+
+                            //update_post_meta( 76, 'key_1', 'Excited', 'Happy' );
+
+            // global $wpdb;
+            // $table_name = $wpdb->prefix . 'pmpro_membership_levels';
+            // $wpdb->insert($table_name , array("id" => $id, "name" => $title));
+
+
+ 
+                // global $wpdb;     
+                // $table_name = $wpdb->prefix . 'pmpro_membership_levels';     
+                // $id = 52;     
+                // $title = 'hira';   
+                // $wpdb->query("INSERT INTO $wp_pmpro_membership_levels(id, name,description,confirmation,initial_payment,billing_amount,cycle_number,cycle_period,billing_limit,trial_amount,trial_limit, allow_singnups, expiration_number,expiration_period ) VALUES('$id', '$title')"); 
+               
+
+              // if ( isset( $_POST['submit'] ) ){
+                
+                    // global $wpdb;
+                    // $tablename=$wpdb->prefix.'pmpro_membership_levels';
+                    // $data=array(
+                    //     'id' => 13, 
+                    //     'name' => 'hiralal',
+                    //     'description' => NULL, 
+                    //     'confirmation' => NULL,
+                    //     'initial_payment' => NULL, 
+                    //     'billing_amount' => NULL, 
+                    //     'cycle_number' => NULL,
+                    //     'cycle_period' => NULL, 
+                    //     'billing_limit' => NULL, 
+                    //     'trial_amount' => NULL,
+                    //     'trial_limit' => NULL, 
+                    //     'allow_singnups' => NULL, 
+                    //     'expiration_number' => NULL, 
+                    //     'expiration_period' => NULL, );
+                
+                    //  $wpdb->insert( $pmpro_membership_levels, $data);
+                // }else{
+                //     echo "Not";
+                // }
+				
+				
+				
 
 
 	
